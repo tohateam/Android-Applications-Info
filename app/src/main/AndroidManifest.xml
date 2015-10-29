@@ -21,5 +21,16 @@
 
         <activity android:name=".ViewManifestActivity" />
 
+        <activity
+            android:name=".GlobalPreferences"
+            android:icon="@drawable/ic_cog"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.majeur.applicationsinfo.MainActivity" />
+        </activity>
+		
+
     </application>
 </manifest>

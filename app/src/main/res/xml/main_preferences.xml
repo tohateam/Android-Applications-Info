@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<!--xmlns:custom="http://schemas.android.com/apk/res/com.tohateam.apptools">-->
+
+	<PreferenceCategory
+		android:title="@string/prefs_category_global">
+		<ListPreference
+            android:key="prefs_theme"
+			android:title="@string/prefs_theme"
+			android:summary="@string/prefs_theme_summary"
+			android:dialogTitle="@string/prefs_theme_title"
+            android:defaultValue="@string/default_theme"
+			android:entries="@array/prefs_theme_entries"
+			android:entryValues="@array/prefs_theme_values" />
+
+        <SwitchPreference
+            android:key="prefs_uninstall_system"
+            android:title="@string/prefs_uninstall_system"
+            android:summaryOn="@string/prefs_uninstall_summary_on"
+            android:summaryOff="@string/prefs_uninstall_summary_off"
+            android:defaultValue="false" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="@string/prefs_category_view">
+        <SwitchPreference
+            android:key="prefs_show_frozen"
+            android:title="@string/prefs_show_frozen"
+            android:summaryOn="@string/prefs_show_frozen_summary_on"
+            android:summaryOff="@string/prefs_show_frozen_summary_off"
+            android:defaultValue="false" />
+        <ListPreference
+            android:key="pref_sort_by"
+            android:title="@string/prefs_sort_by"
+            android:summary="@string/prefs_sort_by_summary"
+            android:dialogTitle="@string/prefs_sort_by_title"
+            android:defaultValue="@string/default_sort_by"
+            android:entries="@array/prefs_sort_by_entries"
+            android:entryValues="@array/prefs_sort_by_values" />
+	</PreferenceCategory>
+
+</PreferenceScreen>
+

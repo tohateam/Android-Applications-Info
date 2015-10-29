@@ -1,26 +1,26 @@
 package com.majeur.applicationsinfo;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.app.*;
+import android.content.*;
+import android.os.*;
+import android.preference.*;
+import android.view.*;
+import android.widget.*;
 
 public class MainActivity extends Activity implements MainCallbacks {
 
     private boolean mIsDualPane;
     private boolean mIsArtShowed = false;
+	private SharedPreferences sharedPref;
+	
+	public static boolean UNINSTALL_SYSYEM = false;
+	public static int SORT_BY = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+		sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         mIsDualPane = findViewById(R.id.item_detail_container) != null;
 
         //Show an art when no fragment is showed, we make sure no detail fragment is present.
@@ -64,11 +64,18 @@ public class MainActivity extends Activity implements MainCallbacks {
             showAboutDialog();
             return true;
         }
+
+        if (item.getItemId() == R.id.action_settings) {
+            showSettings();
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     protected void onStart() {
+		loadOptions();
         super.onStart();
         registerReceiver(receiver, getIntentFilter());
     }
@@ -108,4 +115,24 @@ public class MainActivity extends Activity implements MainCallbacks {
                 mainListFragment.loadList();
         }
     };
+	
+	public void showSettings() {
+		Intent intent = new Intent(this, GlobalPreferences.class);
+		startActivityForResult(intent, 0);
+	}
+
+	// получаем результат
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+
+		loadOptions();
+	}
+
+	// Загружаем настройки программы
+	private void loadOptions() {
+		UNINSTALL_SYSYEM = sharedPref.getBoolean("prefs_uninstall_system", false);
+		SORT_BY = Integer.parseInt(sharedPref.getString("pref_sort_by", "0"));
+	} // end getOptions
+	
 }

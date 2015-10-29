@@ -31,13 +31,14 @@ public class DetailOverflowMenu implements View.OnClickListener, PopupMenu.OnMen
 
         // Disable/Enable item menu if root
 		// !mSettings.UNINSTALL_SYSYEM & 
-		if (MyUtils.isSystemApp(mContext, mPackageName)) {
+		if (!MainActivity.UNINSTALL_SYSYEM & MyUtils.isSystemApp(mContext, mPackageName)) {
             popupMenu.getMenu().findItem(R.id.action_uninstall).setEnabled(false);
         } else {
             popupMenu.getMenu().findItem(R.id.action_uninstall).setEnabled(true);
         }
 
 		// Show/Hide item menu
+		// FIXMI (tohateam) : ???
         if (ShellInterface.isSuAvailable()) {
 			popupMenu.getMenu().findItem(R.id.action_freezen).setVisible(MyUtils.isFrozenApp(mContext, mPackageName));
         	popupMenu.getMenu().findItem(R.id.action_unfreezen).setVisible(!MyUtils.isFrozenApp(mContext, mPackageName));
@@ -47,8 +48,6 @@ public class DetailOverflowMenu implements View.OnClickListener, PopupMenu.OnMen
 			popupMenu.getMenu().findItem(R.id.action_freezen).setEnabled(false);
 			popupMenu.getMenu().findItem(R.id.action_unfreezen).setEnabled(false);			
 		}
-		
-//        popupMenu.getMenu().findItem(R.id.action_uninstall).setEnabled(!MyUtils.isSystemApp(mContext, mPackageName));
 
         popupMenu.setOnMenuItemClickListener(this);
         popupMenu.show();
@@ -77,6 +76,12 @@ public class DetailOverflowMenu implements View.OnClickListener, PopupMenu.OnMen
 			case R.id.action_kill:
 				killApp();
                 return true;
+            case R.id.action_freezen:
+                runCommand("pm disable " + mPackageName, true);
+                return true;
+            case R.id.action_unfreezen:
+                runCommand("pm enable " + mPackageName, false);
+                return true;
 		}
         return false;
     }
@@ -86,7 +91,7 @@ public class DetailOverflowMenu implements View.OnClickListener, PopupMenu.OnMen
 		new AlertDialog.Builder(mActivity)
 			.setIcon(R.drawable.ic_alert)
 			.setTitle("Kill application?")
-			.setMessage("Are you sure?\n Stop the application?")
+			.setMessage("Are you sure?\n" + "Stop the application?")
 			.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -96,12 +101,34 @@ public class DetailOverflowMenu implements View.OnClickListener, PopupMenu.OnMen
 			.setNegativeButton("No", null)
 			.show();
 	}
-//    public boolean isSystemApp() {
-//        try {
-//            return (mContext.getPackageManager().getApplicationInfo(mPackageName, 0).flags & ApplicationInfo.FLAG_SYSTEM) != 0;
-//        } catch (PackageManager.NameNotFoundException e) {
-//            e.printStackTrace();
-//            return false;
-//        }
-//    }
+	
+    public void runCommand(final String command, boolean operation) {
+		String mTitle = "";
+		String mMassege = "";
+		if (operation) {
+			mTitle = "Disable application";
+			mMassege = "Are you sure you want\n" + "to disable the application?";
+		} else {
+			mTitle = "Enable applicatiom";
+			mMassege = "Are you sure you want\n" + "to enable the application?";
+		}
+
+		new AlertDialog.Builder(mActivity)
+			.setIcon(R.drawable.ic_alert)
+			.setTitle(mTitle)
+			.setMessage(mMassege)
+			.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					if (ShellInterface.isSuAvailable()) {
+						ShellInterface.runCommand(command);
+					} else {
+						Toast.makeText(mContext, mContext.getString(R.string.dont_root), Toast.LENGTH_LONG).show();
+					}
+                }
+			})
+			.setNegativeButton("No", null)
+			.show();
+    }
+	
 }
