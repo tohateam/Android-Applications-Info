@@ -7,4 +7,14 @@
         <item>@string/installation</item>
         <item>@string/size</item>
     </string-array>
+
+	<!--Filter-->
+	<string-array name="filter_spinner_items">
+		<item>@string/action_filter_all</item>
+		<item>@string/action_filter_user</item>
+		<item>@string/action_filter_system</item>
+		<item>@string/action_filter_frozen</item>
+		<item>@string/action_filter_updated</item>
+		<item>@string/action_filter_running</item>
+    </string-array>
 </resources>

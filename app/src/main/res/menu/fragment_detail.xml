@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:title="@string/action_freezen"
+        android:id="@+id/action_freezen" />
+	
+    <item android:title="@string/action_unfreezen"
+        android:id="@+id/action_unfreezen" />
+
+    <item android:title="@string/action_kill"
+        android:id="@+id/action_kill" />
+	
     <item android:title="@string/uninstall"
         android:id="@+id/action_uninstall" />
 

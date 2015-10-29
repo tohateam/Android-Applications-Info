@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+	<item
+        android:title="@string/action_sort"
+        android:icon="@drawable/ic_sort_variant"
+        android:id="@+id/action_sort"
+        android:showAsAction="ifRoom">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/item_sort_name"
+                    android:title="@string/action_sort_name"
+                    android:checked="true" />
+                <item
+                    android:id="@+id/item_sort_package"
+                    android:title="@string/action_sort_package" />
+                <item
+                    android:id="@+id/item_sort_domain"
+                    android:title="@string/action_sort_system_user" />
+                <item
+                    android:id="@+id/item_sort_install"
+                    android:title="@string/action_sort_installation" />
+                <item
+                    android:id="@+id/item_sort_size"
+                    android:title="@string/action_sort_size" />
+            </group>
+        </menu>
+    </item>
+	
     <item android:title="@string/refresh"
         android:icon="@drawable/ic_refresh"
         android:id="@+id/action_refresh"

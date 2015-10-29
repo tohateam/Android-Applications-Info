@@ -9,7 +9,7 @@ public class RetainedFragment extends Fragment {
 
     static final String FRAGMENT_TAG = "fragment_retained";
 
-    private List<MainListFragment.Item> mList;
+    private List<AppItemModel> mList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -17,11 +17,11 @@ public class RetainedFragment extends Fragment {
         setRetainInstance(true);
     }
 
-    public void setList(List<MainListFragment.Item> list) {
+    public void setList(List<AppItemModel> list) {
         mList = list;
     }
 
-    public List<MainListFragment.Item> getList() {
+    public List<AppItemModel> getList() {
         return mList;
     }
 }

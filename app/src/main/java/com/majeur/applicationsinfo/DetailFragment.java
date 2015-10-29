@@ -47,6 +47,7 @@ public class DetailFragment extends Fragment {
 
     static final String FRAGMENT_TAG = "fragment_detail";
     static final String EXTRA_PACKAGE_NAME = "pkg";
+	
     private static final String UID_STATS_PATH = "/proc/uid_stat/";
     private static final String UID_STATS_TR = "tcp_rcv";
     private static final String UID_STATS_RC = "tcp_snd";
@@ -91,7 +92,7 @@ public class DetailFragment extends Fragment {
         mPackageName = getArguments().getString(EXTRA_PACKAGE_NAME);
         mColorGrey1 = getResources().getColor(R.color.grey_1);
         mColorGrey2 = getResources().getColor(R.color.grey_2);
-        mDetailOverflowMenu = new DetailOverflowMenu(getActivity(), mPackageName);
+        mDetailOverflowMenu = new DetailOverflowMenu(getActivity(), mPackageName, getActivity());
 
         mGroupTitleIds = getResources().obtainTypedArray(R.array.group_titles);
 

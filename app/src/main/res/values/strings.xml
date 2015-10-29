@@ -82,4 +82,34 @@
         <item>@string/configurations</item>
         <item>@string/signatures</item>
     </array>
+	
+	<!--
+		===== New Strengs =====
+	-->
+	<!--===== Filter menu =====-->
+    <string name="action_filter">Filter</string>
+    <string name="action_filter_all">All</string>
+    <string name="action_filter_user">User</string>
+    <string name="action_filter_system">System</string>
+    <string name="action_filter_updated">Updated</string>
+    <string name="action_filter_frozen">Frozen</string>
+    <string name="action_filter_running">Running</string>
+	
+    <!--===== Sort Menu =====-->
+    <string name="action_sort">Sort</string>
+    <string name="action_sort_name">Name</string>
+    <string name="action_sort_package">Package</string>
+    <string name="action_sort_system_user">User/System</string>
+    <string name="action_sort_size">Size</string>
+    <string name="action_sort_installation">Installation</string>
+	
+	<!--Detail Overflow Menu-->
+	<string name="action_freezen">Freeze app</string>
+    <string name="action_unfreezen">Unfreeze app</string>
+    <string name="action_kill">Kill app</string>
+	
+	<string name="title_info">Detailed information</string>
+	<string name="lib_size">Library</string>
+	<string name="is_running">running</string>
+	
 </resources>

@@ -2,4 +2,10 @@
 <resources>
     <color name="grey_1">#ffffffff</color>
     <color name="grey_2">#fff6f6f6</color>
+
+	<!--New colors-->
+	<color name="default_text">@android:color/primary_text_light</color>
+	<color name="system_app">#FFfb8c00</color>
+	<color name="disebled_app">#FF80CBC4</color>
+	
 </resources>
