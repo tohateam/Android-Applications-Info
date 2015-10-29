@@ -1,4 +1,4 @@
-package com.majeur.applicationsinfo.utils;
+package ua.tohateam.appinfo.utils;
 
 import android.app.*;
 import android.content.*;

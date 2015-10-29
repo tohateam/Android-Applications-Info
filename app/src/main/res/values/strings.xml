@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Applications Info</string>
+    <string name="app_name">App Info</string>
     <string name="loading_apps">Loading applications</string>
     <string name="is_system_app">System app</string>
     <string name="uninstall">Uninstall</string>
@@ -55,7 +55,11 @@
     <string name="netstats_msg">* Data transmitted since last device boot</string>
 
     <string name="about">About</string>
-    <string name="about_message">Developed by Majeur.\n\nSource code: <a>https://github.com/MajeurAndroid/Applications-Info</a></string>
+    <string name="about_message">
+		Developed by Majeur.\n\nSource code:\n
+		<a>https://github.com/MajeurAndroid/Applications-Info</a>
+
+	</string>
 
     <string name="size_details">Size details</string>
     <string name="internal">Internal</string>
@@ -82,12 +86,12 @@
         <item>@string/configurations</item>
         <item>@string/signatures</item>
     </array>
-	
+
 	<!--
-		===== New Strengs =====
+	===== New Strengs =====
 	-->
 	<string name="action_settings">Settings</string>
-	
+
 	<!--===== Filter menu =====-->
     <string name="action_filter">Filter</string>
     <string name="action_filter_all">All</string>
@@ -96,7 +100,7 @@
     <string name="action_filter_updated">Updated</string>
     <string name="action_filter_frozen">Frozen</string>
     <string name="action_filter_running">Running</string>
-	
+
     <!--===== Sort Menu =====-->
     <string name="action_sort">Sort</string>
     <string name="action_sort_name">Name</string>
@@ -104,17 +108,17 @@
     <string name="action_sort_system_user">User/System</string>
     <string name="action_sort_size">Size</string>
     <string name="action_sort_installation">Installation</string>
-	
+
 	<!--Detail Overflow Menu-->
 	<string name="action_freezen">Freeze app</string>
     <string name="action_unfreezen">Unfreeze app</string>
     <string name="action_kill">Kill app</string>
 	<string name="dont_root">No Root rights.\n The operation requires Root access</string>
-	
+
 	<string name="title_info">Detailed information</string>
 	<string name="lib_size">Library</string>
 	<string name="is_running">running</string>
-	
+
 	<!--===== PREFERENCES =====-->
 	<string name="title_activity_settings">Application Settings</string>
 	<string name="prefs_category_global">Global Settings</string>
@@ -131,7 +135,7 @@
 		<item>Material Light</item>
 		<item>Material Dark</item>
 	</string-array>
-	
+
 	<string-array 
 		tools:ignore="MissingTranslation"
 		name="prefs_theme_values" 
@@ -171,6 +175,6 @@
 		<!--<item>5</item>-->
 	</string-array>
 	<string name="default_sort_by" translatable="false">0</string>
-	
-	
+
+
 </resources>

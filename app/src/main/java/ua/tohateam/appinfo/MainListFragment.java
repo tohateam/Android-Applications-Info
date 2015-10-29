@@ -1,4 +1,4 @@
-package com.majeur.applicationsinfo;
+package ua.tohateam.appinfo;
 
 import android.app.*;
 import android.content.*;
@@ -8,8 +8,8 @@ import android.os.*;
 import android.text.format.*;
 import android.view.*;
 import android.widget.*;
-import com.majeur.applicationsinfo.*;
-import com.majeur.applicationsinfo.utils.*;
+import ua.tohateam.appinfo.*;
+import ua.tohateam.appinfo.utils.*;
 import java.lang.reflect.*;
 import java.text.*;
 import java.util.*;

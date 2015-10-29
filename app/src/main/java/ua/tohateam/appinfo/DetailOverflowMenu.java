@@ -1,11 +1,11 @@
-package com.majeur.applicationsinfo;
+package ua.tohateam.appinfo;
 
 import android.app.*;
 import android.content.*;
 import android.net.*;
 import android.view.*;
 import android.widget.*;
-import com.majeur.applicationsinfo.utils.*;
+import ua.tohateam.appinfo.utils.*;
 
 public class DetailOverflowMenu implements View.OnClickListener, PopupMenu.OnMenuItemClickListener
  {
@@ -37,6 +37,10 @@ public class DetailOverflowMenu implements View.OnClickListener, PopupMenu.OnMen
             popupMenu.getMenu().findItem(R.id.action_uninstall).setEnabled(true);
         }
 
+		// is running app
+		boolean isRunningApp = MyUtils.isProcessRunning(mPackageName, mActivity);
+		popupMenu.getMenu().findItem(R.id.action_kill).setEnabled(isRunningApp);
+		
 		// Show/Hide item menu
 		// FIXMI (tohateam) : ???
         if (ShellInterface.isSuAvailable()) {

@@ -1,39 +1,21 @@
-package com.majeur.applicationsinfo;
+package ua.tohateam.appinfo;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.widget.Toast;
-
-import com.majeur.xmlapkparser.AXMLPrinter;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
-
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.StringWriter;
-
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathFactory;
+import android.app.*;
+import android.content.pm.*;
+import android.net.*;
+import android.os.*;
+import android.view.*;
+import android.webkit.*;
+import android.widget.*;
+import java.io.*;
+import javax.xml.parsers.*;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.*;
+import javax.xml.transform.stream.*;
+import javax.xml.xpath.*;
+import org.w3c.dom.*;
+import org.xml.sax.*;
+import ua.tohateam.xmlapkparser.*;
 
 /**
  * Activity that shows AndroidManifest.xml of any apps. Application package name must be passed as extra.

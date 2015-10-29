@@ -1,4 +1,4 @@
-package com.majeur.applicationsinfo.utils;
+package ua.tohateam.appinfo.utils;
 
 public class Tuple<T, K> {
 

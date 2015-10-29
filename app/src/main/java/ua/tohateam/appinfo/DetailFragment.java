@@ -1,4 +1,4 @@
-package com.majeur.applicationsinfo;
+package ua.tohateam.appinfo;
 
 import android.annotation.TargetApi;
 import android.app.Fragment;
@@ -34,8 +34,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.majeur.applicationsinfo.utils.Tuple;
-import com.majeur.applicationsinfo.utils.Utils;
+import ua.tohateam.appinfo.utils.Tuple;
+import ua.tohateam.appinfo.utils.Utils;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
